@@ -3,8 +3,29 @@
     margin: 4rem auto;
     padding: 6rem;
     max-width: 600px;
-    background: #fff;
+    
     border: #999999 solid 1px;
+}
+
+.Dark {
+    background: #333;
+
+    color: #eee;
+}
+.Dark h2 {
+    color: #4f9acf;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.Dark h3 {
+    color: #eee;
+    font-style: italic;
+    font-size: 18px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 body {
