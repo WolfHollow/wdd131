@@ -1,17 +1,33 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const dropbtn = document.querySelector('.dropbtn');
+const dropbtn = document.querySelector('.dropbtn');
+dropbtn.addEventListener('click', clickdropbtn);
+
+function clickdropbtn() {
     const dropdownContent = document.querySelector('.dropdown-content');
+    dropdownContent.classList.toggle('hide');
+}
 
-    dropbtn.addEventListener('click', function() {
-        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-    });
+const dialog = document.querySelector('dialog');
+const gallery = document.querySelector('.gallery');
+gallery.addEventListener('click', openModal);
 
-    // Close the dropdown if clicked outside
-    window.addEventListener('click', function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            if (dropdownContent.style.display === 'block') {
-                dropdownContent.style.display = 'none';
-            }
-        }
-    });
-});
+function openModal(event) {
+    event.target.closest('img')
+        ? (dialog.showModal(),
+          dialog.querySelector('img').setAttribute('src', event.target.src.replace('-sm', '-full')),
+          dialog.querySelector('img').setAttribute('alt', event.target.alt))
+        : null;
+}
+
+const closeBtn = document.querySelector('.close-btn');
+closeBtn.addEventListener('click', closeModal);
+
+function closeModal() {
+    dialog.close();
+}
+
+dialog.addEventListener('click', (event) => {
+  if (event.target === dialog) {
+    dialog.close();
+  }
+})
+
