@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --gold:#EFC69B;
+    --red:#AF1B3F;
+    --dark:#473144;
+
+    --header-font: "lora", impact, serif;
+    --body-font: helvetica, arial, sans-serif;
+}
+
+h1{
+    font-family: var(--header-font);
+    color: var(--dark);
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+nav {
+    border-top: 2px solid var(--gold);
+    margin: 1rem 0;
+    text-align: right;
+    border-bottom: 2px solid var(--gold);
+}
+nav a{
+    font-family: var(--body-font);
+    color: var(--red);
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1.2rem;
+}
+
+main{
+    display: grid;
+    grid-template-areas:"articles filter" ;
+    grid-template-columns: 3fr 1fr;
+}
+.articles{
+    grid-area: articles;
+    padding: 1rem;
+}
+.article-card{
+    display: grid;
+    grid-template-areas:"details book";
+    grid-template-columns: 1fr 2fr;
+}
+.details{
+    grid-area: details;
+    padding: 1rem;
+    border-right: 2px solid var(--gold);
+
+    font-family: var(--body-font);
+    color: var(--dark);
+}
+.book{
+    grid-area: book;
+    padding: 1rem;
+}
+.book h2{
+    font-family: var(--header-font);
+    color: var(--red);
+}
+.book p{
+    font-family: var(--body-font);
+    color: var(--dark);
+}
+.filter{
+    grid-area: filter;
+    padding: 1rem;
+    border-left: 2px solid var(--gold);
+
+    font-family: var(--body-font);
+    color: var(--dark);
+}
