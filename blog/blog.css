@@ -45,8 +45,11 @@ main{
     grid-template-areas:"details book";
     grid-template-columns: 1fr 2fr;
 }
+
 .details{
     grid-area: details;
+    text-align: right;
+    list-style-type: none;
     padding: 1rem;
     border-right: 2px solid var(--gold);
 
@@ -56,10 +59,17 @@ main{
 .book{
     grid-area: book;
     padding: 1rem;
+    margin: auto;
 }
 .book h2{
+    margin: 0.65rem 0;
     font-family: var(--header-font);
     color: var(--red);
+}
+.book img{
+    max-width: 100%;
+    display: block;
+    margin: auto;
 }
 .book p{
     font-family: var(--body-font);
@@ -68,8 +78,8 @@ main{
 .filter{
     grid-area: filter;
     padding: 1rem;
-    border-left: 2px solid var(--gold);
-
+    border: 2px solid var(--gold);
+    margin: 1rem;
     font-family: var(--body-font);
     color: var(--dark);
 }
