@@ -51,7 +51,7 @@ main{
     text-align: right;
     list-style-type: none;
     padding: 1rem;
-    /* border-right: 2px solid var(--gold); */
+    border-right: 2px solid var(--gold);
 
     font-family: var(--body-font);
     color: var(--dark);
