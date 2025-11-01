@@ -35,7 +35,7 @@ nav li{
 }
 main{
     display: grid;
-    grid-template-areas:"articles filter" ;
+    grid-template-areas:"articles filter";
     grid-template-columns: 3fr 1fr;
 }
 .articles{
