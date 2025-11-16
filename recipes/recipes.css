@@ -67,8 +67,10 @@ header form button{
     color: var(--text-dark);
     display: none;
 }
-.recipe-card button{
-    margin: 5px;    
+
+
+.recipe-card img{
+    margin: 10px;    
 }
 footer{
     display: flex;
