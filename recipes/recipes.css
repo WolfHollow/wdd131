@@ -13,7 +13,8 @@ img {
 }
 
 body{
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
 }
 
 
@@ -72,6 +73,9 @@ header form button{
 .recipe-card img{
     margin: 10px;    
 }
+.recipe-word button{
+    margin: 1px;
+}
 footer{
     display: flex;
     flex-direction: column;
@@ -95,7 +99,7 @@ footer a{
 }
 
 @media (min-width: 600px) {
-    img{
+    .recipe-card img{
         max-width: 50%;
     }
     .recipe-card{
