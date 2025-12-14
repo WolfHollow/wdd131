@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Train+One&family=VT323&display=swap');
+
+
+:root {
+    /* colors */
+    --tablet-outline: #8F8F8F;
+    --tablet-background: #7C7C7C;
+    --tablet-shade: #525252;
+    --text: #3F3F3F;
+    --background1: #402B20;
+    --background2: #D6BE96;
+
+    --black: #32203E;
+    --yellow: #DDA300;
+    --green: #5DB104;
+    --blue: #161697;
+    --brown: #624C2C;
+    --pink: #E050A9;
+
+    /* font */
+    --heading-font: "VT323", monospace, serif;
+    --paragraph-font: "VT323", Lato, Helvetica, sans-serif;
+}
+
+/* background */
+body {
+    background: var(--background1);
+    color: var(--text);
+    font-family: var(--paragraph-font);
+    margin: 0;
+    padding: 0;
+    
+}
+
+.cloth {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    align-content: flex-start;
+
+    
+    background: var(--background2);
+    
+    clip-path: polygon(
+        /* Top Edge */
+        100px 0,            /* A: Start 100px in from the top-left */
+        calc(100% - 100px) 0, /* B: End 100px short of the top-right */
+        
+        /* Right Edge */
+        100% 100px,         /* C: 100px down from the top-right */
+        100% calc(100% - 100px), /* D: 100px up from the bottom-right */
+        
+        /* Bottom Edge */
+        calc(100% - 100px) 100%, /* E: 100px in from the bottom-right */
+        100px 100%,         /* F: 100px in from the bottom-left */
+        
+        /* Left Edge */
+        0 calc(100% - 100px),    /* G: 100px up from the bottom-left */
+        0 100px             /* H: 100px down from the top-left */
+    );
+    height: 100vw;
+    
+}
+
+/* header and footer */
+header, footer {
+    background-color: var(--tablet-background);
+    border: 4px solid var(--tablet-outline);
+    box-shadow: 4px 4px 0px var(--tablet-shade);
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    max-width: 100%;
+    width: 98.5%;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+footer .logo{
+    justify-self: end;
+    margin-right: 25px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+    /* margin-left: auto; */
+    justify-self: center;
+}
+header a, footer a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+header a:hover, footer a:hover {
+    color: var(--blue);
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+main {
+    margin-top: 96px;
+    margin-bottom: 60px;
+    min-height: 60vh;
+}
+
+.translator {
+    background: var(--tablet-background);
+    border: 4px solid var(--tablet-outline);
+    box-shadow: 4px 10px 0px var(--tablet-shade);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 20px;
+    height: 75%;
+    width: 80%;
+}
+
+textarea {
+    background-color: var(--tablet-background);
+    font-family: var(--paragraph-font);
+    font-size: 1.2em;
+    padding: 10px;
+    resize: vertical;
+    width: 80%;
+}
+
+#outputText {
+    width: 83%;
+}
+
+#keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 500px;
+    margin-bottom: 10px;
+    margin-top: auto;
+}
+
+.keyboard-btn {
+    background-color: var(--tablet-background);
+    border: 2px solid var(--tablet-outline);
+    box-shadow: 2px 2px 0px var(--tablet-shade);
+    padding: 5px 10px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.keyboard-btn:hover {
+    background-color: var(--tablet-shade);
+}
+
+::placeholder{
+    color: var(--text);
+    opacity: 0.6;
+}
+
+.left, .right {
+    display: none;
+}
+@media (min-width: 720px) {
+    .cloth {
+        height: calc(100vh - 180px);
+        min-width: 720px;
+    }
+    main {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+    .left, .right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: radial-gradient( at center, var(--background2), var(--background1)80%);
+    }
+    .left img , .right img {
+        
+        height: 13%;
+        margin-top: 20px;
+    }
+}
