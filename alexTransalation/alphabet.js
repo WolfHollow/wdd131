@@ -104,7 +104,7 @@ const alphabet = [
         cavescript: 'image/CaveScript/Z.png'
     },
     {   letter: ' ',
-        cavescript: 'image/CaveScript/space.png'
+        cavescript: 'image/CaveScript/Space.png'
     } 
 ];
 
